@@ -1,0 +1,5 @@
+baseURL = 'https://second2050.me/'
+languageCode = 'en-us'
+title = 'second2050'
+theme = 'sekii'
+disableHugoGeneratorInject = false

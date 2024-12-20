@@ -1,0 +1,292 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/*
+ * second2050's base css
+ */
+ 
+:root {
+    --sekii-color-black: #191919;
+    --sekii-color-gray: #282828;
+    --sekii-color-red: #f92672;
+    --sekii-color-green: #a6e22e;
+    --sekii-color-yellow: #f4a331;
+    --sekii-color-blue: #2fd0ef;
+    --sekii-color-purple: #7c34ff;
+    --sekii-color-cyan: #30efd4;
+    --sekii-color-white: #f8f8f2;
+
+    --sekii-color-fg: var(--sekii-color-white);
+    --sekii-color-bg: var(--sekii-color-black);
+    
+    /* min width: 360px; max width: 720px*/
+    --sidebar-padding: clamp(0.25rem, -0.5rem + 3.3333vw, 1rem);
+    --sidebar-title-size: clamp(1.15rem, -1.2rem + 10.4444vw, 3.5rem);
+}
+@media (prefers-color-scheme: light) {
+    :root {
+        --sekii-color-bg: var(--sekii-color-white);
+        --sekii-color-fg: var(--sekii-color-black);
+    }
+    main {
+        /*text-shadow: 0 0.1em 0.2em var(--sekii-color-black);*/
+    }
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --sekii-color-bg: var(--sekii-color-black);
+        --sekii-color-fg: var(--sekii-color-white);
+    }
+}
+
+@font-face {
+    font-family: "Comfortaa";
+    src: url("assets/comfortaa_variable.ttf");
+    font-display: block;
+}
+
+@font-face {
+    font-family: "NerdFontsSymbols Nerd Font";
+    src: url("assets/nfsymbols_regular.ttf");
+    font-display: block;
+}
+
+body {
+    display: flex;
+    font-family: "Comfortaa", "NerdFontsSymbols Nerd Font", sans-serif;
+    background: var(--sekii-color-bg);
+    /*background-image: url("/assets/corner.svg");*/
+    /*background-size: 24em;*/
+    /*background-position: bottom right;*/
+    /*background-repeat: no-repeat;*/
+    /*background-attachment: fixed;*/
+    color: var(--sekii-color-fg);
+}
+
+main {
+    font-size: clamp(1rem, 0.65rem + 1.5556vw, 1.35rem);
+    max-width: 80ch;
+    line-height: 1.5em;
+    margin-inline:
+        calc(var(--sidebar-padding) * 4 + var(--sidebar-title-size))
+        0.5em;
+}
+
+footer {
+    margin-top: 3em;
+    margin-bottom: 3em;
+    line-height: 1em;
+    font-size: .75em;
+    user-select: none;
+}
+
+aside {
+    display: grid;
+    row-gap: var(--sidebar-padding);
+    position: fixed;
+    background-color: var(--sekii-color-blue);
+    color: var(--sekii-color-gray);
+    padding: var(--sidebar-padding);
+    height: calc(100% - var(--sidebar-padding) * 2);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    color: color-mix(
+        in srgb,
+        var(--sekii-color-fg),
+        transparent 50%
+    );
+}
+
+.social-buttons {
+    display: grid;
+    grid-auto-rows: min-content;
+    row-gap: 0.25em;
+    align-items: end;
+    margin-block-start: auto;
+}
+
+.sidebar-title {
+    writing-mode: vertical-rl;
+    font-size: var(--sidebar-title-size);
+    font-weight: 900;
+    margin-block-end: -0.05em;
+    margin-inline-start: calc(var(--sidebar-padding) / 4);
+}
+
+.sidebar-picture {
+    width: var(--sidebar-title-size);
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.banner {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 680/240;
+    border-radius: 1em;
+    object-fit: cover;
+    margin-top: 1em;
+}
+
+.block-quote {
+    padding: 0.5em;
+    background: color-mix(in srgb, var(--sekii-color-fg), transparent 95%);
+    /*background: linear-gradient(*/
+    /*    to right,*/
+    /*    color-mix(in srgb, var(--sekii-color-fg), transparent 95%),*/
+    /*    transparent*/
+    /*);*/
+    border-left: 0.25em solid var(--sekii-color-blue);
+    border-radius: 0.5em;
+    backdrop-filter: blur(1em);
+}
+
+h1 {
+    font-size: 2em;
+    line-height: 1em;
+    margin-top: 0.5em;
+    color: var(--sekii-color-blue);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.35em;
+    line-height: 1em;
+    margin-top: 0.4em;
+    color: var(--sekii-color-green);
+    font-weight: 550;
+}
+
+p + p {
+    margin-top: 0.35em;
+}
+
+a {
+    color: var(--sekii-color-red);
+    text-decoration: none;
+    border-radius: 0.25em;
+}
+
+a:hover {
+    background-color: color-mix(in srgb, var(--sekii-color-red) 25%, transparent);
+}
+
+a:active {
+    color: var(--sekii-color-gray);
+    background-color: var(--sekii-color-red);
+}
+
+em {
+    color: var(--sekii-color-cyan);
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.hidden-link,
+.hidden-link:hover, 
+.hidden-link:active {
+    text-decoration: none;
+    background-color: transparent;
+}
+
+ul {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    li {
+        margin-inline: 1em;
+    }
+    li::marker {
+        content: "• "
+    }
+}
+
+/*
+ * Animations
+ */
+@media (prefers-reduced-motion: no-preference) {
+    a:active {
+        transition: ease-in-out .125s;
+    }
+
+    @keyframes loadFadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    @keyframes loadSlideIn {
+        0% { transform: translateY(-1em); opacity: 0; }
+        100% { transform: translateY(0%); opacity: 1; }
+    }
+
+    main {
+        animation: ease-in-out 0.75s loadFadeIn;
+    }
+
+    main > img {
+        animation: ease-in-out 0.5s loadFadeIn;
+    }
+
+    main > * {
+        animation: ease-out 0.5s loadSlideIn;
+    }
+
+    /*.sidebar-picture:hover {
+        animation: sidebar-picture-anim 1s infinite;
+    }
+    @keyframes sidebar-picture-anim {
+        0%,100% { transform: rotate(0); }
+        15% { transform: rotate(-10deg); }
+        85% { transform: rotate(10deg); }
+    }*/
+}
