@@ -117,7 +117,7 @@ main {
     line-height: 1.5em;
     margin-inline:
         calc(var(--sidebar-padding) * 4 + var(--sidebar-title-size))
-        0.5em;
+        calc(var(--sidebar-padding) * 2);
 }
 
 footer {
