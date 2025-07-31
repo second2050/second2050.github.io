@@ -1,3 +1,6 @@
 # hugo build directory
 /public
 /resources
+
+# direnv
+/.direnv

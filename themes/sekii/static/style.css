@@ -94,6 +94,12 @@ table {
 }
 
 @font-face {
+    font-family: "Maple Mono";
+    src: url("assets/maplemono_variable.ttf");
+    font-display: block;
+}
+
+@font-face {
     font-family: "NerdFontsSymbols Nerd Font";
     src: url("assets/nfsymbols_regular.ttf");
     font-display: block;
@@ -146,6 +152,13 @@ img {
         var(--sekii-color-fg),
         transparent 50%
     );
+}
+
+code,
+samp {
+    font-family: "Maple Mono", "NerdFontsSymbols Nerd Font", monospace;
+    font-weight: 300;
+    line-height: 1em;
 }
 
 .social-buttons {
@@ -249,6 +262,11 @@ ul {
     li::marker {
         content: "• "
     }
+}
+
+.li-comment {
+    opacity: 33%;
+    user-select: none;
 }
 
 /*
