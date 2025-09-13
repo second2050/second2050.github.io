@@ -6,7 +6,7 @@
   };
 
   outputs =
-    { self, nixpkgs }:
+    { nixpkgs, ... }:
     let
       inherit (nixpkgs) lib;
       eachSystem =
@@ -14,7 +14,7 @@
     in
     {
       devShells = eachSystem (pkgs: {
-        default = pkgs.mkShell {
+        default = pkgs.mkShellNoCC {
           name = "website";
           packages = [
             pkgs.hugo
