@@ -5,3 +5,10 @@
 {{ $title := print .Title " &ndash; " .Site.Title }}
 {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
 <title>{{ $title | safeHTML }}</title>
+{{ if .Description }}
+<meta name="description" content="{{ .Description }}"/>
+{{ end }}
+<meta property="og:title" content="{{ .Title }}"/>
+<meta property="og:url" content="{{ .Permalink }}"/>
+<meta property="og:site_name" content="{{ .Site.Title }}"/>
+<meta property="og:type" content="website"/>
