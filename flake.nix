@@ -20,6 +20,7 @@
             pkgs.hugo
             pkgs.vscode-langservers-extracted # htmlls, cssls
             pkgs.ltex-ls-plus
+            pkgs.imagemagick
           ];
         };
       });
