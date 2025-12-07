@@ -269,6 +269,10 @@ ul {
     user-select: none;
 }
 
+.suppress {
+    opacity: 33%;
+}
+
 /*
  * Animations
  */
