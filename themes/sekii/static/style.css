@@ -142,6 +142,7 @@ aside {
     color: var(--sekii-color-gray);
     padding: var(--sidebar-padding);
     height: calc(100% - var(--sidebar-padding) * 2);
+    user-select: none;
 }
 
 img {
@@ -175,6 +176,9 @@ samp {
     font-weight: 900;
     margin-block-end: -0.05em;
     margin-inline-start: calc(var(--sidebar-padding) / 4);
+}
+.sidebar-title:hover span {
+    display: none;
 }
 
 .sidebar-picture {
